@@ -24,3 +24,14 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+@theme {
+  /* Aquí definimos las animaciones personalizadas al estilo v4 */
+  --animate-bounce-slow: bounce 4s infinite;
+  --animate-pulse-slow: pulse 6s infinite;
+  --animate-spin-slow: spin 10s linear infinite;
+
+  /* Si quieres que los gradientes se vean exactos a la imagen */
+  --color-brand-dark: #030712;
+  --color-brand-blue: #2563eb;
+}
