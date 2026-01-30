@@ -1,3 +1,16 @@
+import { Geist, Geist_Mono } from "next/font/google";
+import "./globals.css";
+
+const geistSans = Geist({
+  variable: "--font-geist-sans",
+  subsets: ["latin"],
+});
+
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
+
 export const metadata = {
   title: {
     default: 'CRAXMEDIA | Ingeniería de Software y Diseño de Élite',
@@ -21,7 +34,7 @@ export const metadata = {
     siteName: 'CRAXMEDIA',
     images: [
       {
-        url: '/craxmedia.png', // Coloca esta imagen en tu carpeta /public
+        url: '/og-image.jpg', // Coloca esta imagen en tu carpeta /public
         width: 1200,
         height: 630,
         alt: 'CRAXMEDIA Software Development',
@@ -29,11 +42,6 @@ export const metadata = {
     ],
     locale: 'es_CO',
     type: 'website',
-  },
-  // Favicon y otros iconos
-  icons: {
-    icon: '/favicon.ico',
-    apple: '/apple-touch-icon.png',
   },
 };
 
