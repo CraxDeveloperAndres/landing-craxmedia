@@ -21,7 +21,7 @@ export const projects = [
     id: 3,
     title: "CyD Ingenieria",
     category: "Landing Page",
-    image: "https://www.ingenieriacyd.com/logo.png",
+    image: "https://www.ingenieriacyd.com/logo-min.webp",
     tech: ["Next.js", "Tailwind", "Vercel", "Figma", "SEO", "email marketing"],
     externalUrl: "https://www.ingenieriacyd.com"
   }

@@ -87,7 +87,7 @@ export const Footer = () => {
               </div>
               <div className="flex items-start gap-3 text-sm group cursor-pointer">
                 <Phone size={18} className="text-blue-500" />
-                <span className="text-gray-500 group-hover:text-gray-300 transition-colors">+57 321 461 8515</span>
+                <span className="text-gray-500 group-hover:text-gray-300 transition-colors">+57 301 3145204</span>
               </div>
               <div className="flex items-start gap-3 text-sm">
                 <MapPin size={18} className="text-blue-500" />

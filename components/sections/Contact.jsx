@@ -98,8 +98,8 @@ export const Contact = () => {
               </h3>
               <div className="space-y-6">
                 {[
-                  { icon: <Mail />, text: "hola@craxmedia.com", label: "Email" },
-                  { icon: <Phone />, text: "+57 321 461 8515", label: "Teléfono" },
+                  { icon: <Mail />, text: "craxmediaco@gmail.com", label: "Email" },
+                  { icon: <Phone />, text: "+57 301 3145204", label: "Teléfono" },
                   { icon: <MapPin />, text: "Cali, Valle del Cauca, Colombia", label: "Ubicación" }
                 ].map((item, idx) => (
                   <div key={idx} className="flex items-center gap-5 group">
@@ -111,17 +111,6 @@ export const Contact = () => {
                       <p className="text-white font-medium">{item.text}</p>
                     </div>
                   </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="pt-8">
-              <h4 className="text-sm font-bold text-gray-400 uppercase tracking-[0.3em] mb-6">Presencia Digital</h4>
-              <div className="flex gap-4">
-                {[<Linkedin />, <Twitter />, <Github />].map((icon, idx) => (
-                  <a key={idx} href="#" className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-gray-400 hover:text-white hover:border-blue-500 hover:bg-blue-500/10 transition-all">
-                    {icon}
-                  </a>
                 ))}
               </div>
             </div>

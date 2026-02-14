@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 export const WhatsAppBubble = () => {
   const [showMessage, setShowMessage] = useState(false);
-  const phoneNumber = "573214618515"; // Reemplaza con tu número de WhatsApp con código de país
+  const phoneNumber = "573013145204"; // Reemplaza con tu número de WhatsApp con código de país
 
   useEffect(() => {
     const timer = setTimeout(() => {
