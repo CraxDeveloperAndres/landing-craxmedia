@@ -24,6 +24,14 @@ export const projects = [
     image: "https://www.ingenieriacyd.com/logo-min.webp",
     tech: ["Next.js", "Tailwind", "Vercel", "Figma", "SEO", "email marketing"],
     externalUrl: "https://www.ingenieriacyd.com"
+  },
+  {
+    id: 4,
+    title: "Casval Ingenieria",
+    category: "Landing Page Multimedia",
+    image: "https://casvalingenieria.com/casvaliconwhi.png",
+    tech: ["Vite", "Tailwind", "Vercel", "3D", "SEO", "Multimedia"],
+    externalUrl: "https://casvalingenieria.com"
   }
 ];
 
