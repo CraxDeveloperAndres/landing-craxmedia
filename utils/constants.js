@@ -10,14 +10,6 @@ export const projects = [
     externalUrl: "https://www.monstersburger.com.co"
   },
   {
-    id: 2,
-    title: "Portafolio Andrés",
-    category: "Web development",
-    image: "https://mir-s3-cdn-cf.behance.net/projects/404/bf1e68214791583.Y3JvcCwzMDY4LDI0MDAsNjgsMA.jpg",
-    tech: ["React", "React-fiber", "Three.js", "Tailwind"],
-    externalUrl: "https://developer-andres-portafolio.vercel.app/"
-  },
-  {
     id: 3,
     title: "CyD Ingenieria",
     category: "Landing Page",
@@ -32,7 +24,16 @@ export const projects = [
     image: "https://casvalingenieria.com/casvaliconwhi.png",
     tech: ["Vite", "Tailwind", "Vercel", "3D", "SEO", "Multimedia"],
     externalUrl: "https://casvalingenieria.com"
+  },
+  {
+    id: 5,
+    title: "Super listo!",
+    category: "Landing Page Multimedia",
+    image: "https://superlisto.com.co/assets/defaultLogo.png",
+    tech: ["Vite", "Tailwind", "Vercel", "3D", "SEO", "Multimedia","email marketing", "React"],
+    externalUrl: "https://superlisto.com.co/landing"
   }
+
 ];
 
 export const services = [
