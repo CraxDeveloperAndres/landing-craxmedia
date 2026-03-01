@@ -5,6 +5,7 @@ export const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
+  // Control del scroll para el diseño de la barra
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
@@ -12,6 +13,15 @@ export const Navigation = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  // Bloquear el scroll del cuerpo cuando el menú móvil está abierto
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+  }, [isMenuOpen]);
 
   const navLinks = [
     { name: 'Inicio', href: '#inicio' },
@@ -31,41 +41,34 @@ export const Navigation = () => {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex justify-between items-center">
           
-          {/* LOGO ADAPTADO */}
+          {/* LOGO */}
           <div 
-            className="flex items-center gap-3 group cursor-pointer"
-            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            className="flex items-center gap-3 group cursor-pointer relative z-[110]"
+            onClick={() => {
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+              setIsMenuOpen(false);
+            }}
           >
-            <div className="relative">
-              {/* Resplandor detrás del logo */}
-              <div className="absolute inset-0 bg-blue-500 rounded-full blur-md opacity-0 group-hover:opacity-40 transition-opacity duration-500" />
-              
-              <div className="relative w-12 h-12 flex items-center justify-center transition-transform duration-500 group-hover:scale-110">
-                <img 
-                  src="/craxmedia.png"
-                  alt="Craxmedia Logo" 
-                  className="w-full h-full object-contain brightness-0 invert group-hover:brightness-100 group-hover:invert-0 transition-all duration-500"
-                  style={{ filter: scrolled ? 'none' : 'brightness(0) invert(1)' }}
-                />
-              </div>
+            <div className="relative w-10 h-10 md:w-12 md:h-12 flex items-center justify-center transition-transform duration-500 group-hover:scale-110">
+              <img 
+                src="/craxmedia.png"
+                alt="Craxmedia Logo" 
+                className="w-full h-full object-contain"
+                style={{ filter: (scrolled || isMenuOpen) ? 'none' : 'brightness(0) invert(1)' }}
+              />
             </div>
             
             <div className="flex flex-col -space-y-1">
               <span className="text-xl font-black tracking-tighter text-white">
-                CRAX<span className="text-blue-500 transition-colors duration-300 group-hover:text-white">MEDIA</span>
-              </span>
-              <span className="text-[8px] font-bold tracking-[0.3em] text-blue-400 uppercase opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-1 group-hover:translate-y-0">
-                Tech Studio
+                CRAX<span className="text-blue-500 group-hover:text-blue-400">MEDIA</span>
               </span>
             </div>
           </div>
 
-          {/* DESKTOP MENU (Capsule Style) */}
+          {/* DESKTOP MENU */}
           <div className="hidden md:flex items-center gap-2">
             <div className={`flex items-center gap-8 px-8 py-2.5 rounded-full border transition-all duration-500 ${
-              scrolled 
-                ? 'bg-white/5 border-white/10 backdrop-blur-md' 
-                : 'bg-transparent border-transparent'
+              scrolled ? 'bg-white/5 border-white/10 backdrop-blur-md' : 'bg-transparent border-transparent'
             }`}>
               {navLinks.map((item) => (
                 <a
@@ -78,35 +81,36 @@ export const Navigation = () => {
                 </a>
               ))}
             </div>
-            
-            <a href="#contacto" className="ml-4 px-6 py-2.5 bg-blue-600 hover:bg-white hover:text-blue-600 text-white text-xs font-black uppercase tracking-widest rounded-full transition-all duration-300 border border-blue-500 shadow-[0_0_20px_rgba(37,99,235,0.3)] active:scale-95">
+            <a href="#contacto" className="ml-4 px-6 py-2.5 bg-blue-600 hover:bg-white hover:text-blue-600 text-white text-xs font-black uppercase tracking-widest rounded-full transition-all duration-300 border border-blue-500 shadow-[0_0_20px_rgba(37,99,235,0.3)]">
               Hablemos!
             </a>
           </div>
 
-          {/* MOBILE BUTTON */}
+          {/* MOBILE BUTTON (Z-index alto para estar sobre el overlay) */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden p-2 text-white bg-white/5 rounded-xl border border-white/10"
+            className="md:hidden relative z-[110] p-2 text-white bg-white/5 rounded-xl border border-white/10"
+            aria-label="Toggle Menu"
           >
-            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
         </div>
       </div>
 
-      {/* MOBILE MENU */}
+      {/* MOBILE MENU OVERLAY */}
       <div 
-        className={`fixed inset-0 bg-[#020617] z-[-1] transition-all duration-500 ease-in-out ${
-          isMenuOpen ? 'translate-x-0' : 'translate-x-full'
-        } md:hidden`}
+        className={`fixed inset-0 bg-[#020617] transition-all duration-500 ease-in-out md:hidden ${
+          isMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
+        }`}
+        style={{ zIndex: 105 }}
       >
-        <div className="flex flex-col items-center justify-center h-full space-y-10">
+        <div className="flex flex-col items-center justify-center h-full space-y-8 px-6 text-center">
           {navLinks.map((item, index) => (
             <a
               key={item.name}
               href={item.href}
               onClick={() => setIsMenuOpen(false)}
-              className={`text-4xl font-black text-white hover:text-blue-500 transition-all transform ${
+              className={`text-4xl font-black text-white hover:text-blue-500 transition-all transform duration-500 ${
                 isMenuOpen ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
               }`}
               style={{ transitionDelay: `${index * 100}ms` }}
@@ -114,9 +118,18 @@ export const Navigation = () => {
               {item.name}
             </a>
           ))}
-          <button className="px-10 py-4 bg-blue-600 text-white font-black uppercase tracking-tighter rounded-2xl shadow-lg">
-            INICIAR PROYECTO
-          </button>
+          
+          <div className={`pt-4 transition-all duration-700 delay-500 transform ${
+            isMenuOpen ? 'scale-100 opacity-100' : 'scale-90 opacity-0'
+          }`}>
+            <a 
+              href="#contacto"
+              onClick={() => setIsMenuOpen(false)}
+              className="inline-block px-10 py-4 bg-blue-600 text-white font-black uppercase tracking-tighter rounded-2xl shadow-[0_0_30px_rgba(37,99,235,0.4)]"
+            >
+              INICIAR PROYECTO
+            </a>
+          </div>
         </div>
       </div>
     </nav>
