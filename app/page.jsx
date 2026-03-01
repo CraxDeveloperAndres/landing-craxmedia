@@ -9,6 +9,7 @@ import { About } from '../components/sections/About';
 import { Contact } from '../components/sections/Contact';
 import { Footer } from '../components/sections/Footer';
 import {WhatsAppBubble} from '../components/sections/WhatsappBurble';
+import { DomuPlus } from '../components/sections/DomuPlus';
 
 export default function Page() {
   return (
@@ -17,6 +18,7 @@ export default function Page() {
       <Hero />
       <Stats />
       <Services />
+      <DomuPlus />
       <Portafolio />
       <About />
       <Contact />
