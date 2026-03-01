@@ -21,7 +21,7 @@ export const projects = [
     id: 4,
     title: "Casval Ingenieria",
     category: "Landing Page Multimedia",
-    image: "https://casvalingenieria.com/casvaliconwhi.png",
+    image: "https://casvalingenieria.com/casval.svg",
     tech: ["Vite", "Tailwind", "Vercel", "3D", "SEO", "Multimedia"],
     externalUrl: "https://casvalingenieria.com"
   },
