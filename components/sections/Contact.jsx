@@ -99,7 +99,7 @@ export const Contact = () => {
               <div className="space-y-6">
                 {[
                   { icon: <Mail />, text: "craxmediaco@gmail.com", label: "Email" },
-                  { icon: <Phone />, text: "+57 301 3145204", label: "Teléfono" },
+                  { icon: <Phone />, text: "+57 319 7293775", label: "Teléfono" },
                   { icon: <MapPin />, text: "Cali, Valle del Cauca, Colombia", label: "Ubicación" }
                 ].map((item, idx) => (
                   <div key={idx} className="flex items-center gap-5 group">
