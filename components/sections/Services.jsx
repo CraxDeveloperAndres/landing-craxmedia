@@ -13,14 +13,14 @@ export const Services = () => {
         <div className="mb-20 space-y-4">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20">
             <Sparkles size={14} className="text-blue-400" />
-            <span className="text-[10px] font-bold uppercase tracking-widest text-blue-300">Ecosistema de Soluciones</span>
+            <span className="text-[10px] font-bold uppercase tracking-widest text-blue-300">Ecosistema de Soluciones TI</span>
           </div>
           
           <h2 className="text-4xl md:text-6xl font-black text-white tracking-tighter">
-            SOLUCIONES <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-500">SIN LÍMITES</span>
+            DESARROLLO DE SOFTWARE <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-500">SIN LÍMITES</span>
           </h2>
           <p className="text-gray-400 text-lg max-w-2xl leading-relaxed">
-            Fusionamos diseño disruptivo con arquitectura de software de alta disponibilidad para crear productos que dominan el mercado.
+            Fusionamos diseño multimedia y arquitectura de software de alta disponibilidad para crear aplicaciones móviles y sistemas empresariales que dominan el mercado.
           </p>
         </div>
 
@@ -63,8 +63,8 @@ export const Services = () => {
         {/* Call to Action Secundario */}
         <div className="mt-20 p-10 rounded-[3rem] bg-gradient-to-r from-blue-900/20 to-purple-900/20 border border-white/5 backdrop-blur-sm flex flex-col md:flex-row items-center justify-between gap-8">
           <div>
-            <h4 className="text-2xl font-bold text-white mb-2">¿Necesitas algo a medida?</h4>
-            <p className="text-gray-400">Desarrollamos algoritmos y sistemas específicos según tus requerimientos técnicos.</p>
+            <h4 className="text-2xl font-bold text-white mb-2">¿Necesitas desarrollo a medida?</h4>
+            <p className="text-gray-400">Desarrollamos software y ecosistemas de TI específicos según tus requerimientos. Potenciando empresas de Colombia y el Valle del Cauca hacia el mundo.</p>
           </div>
           <a href="#contacto" className="whitespace-nowrap px-8 py-4 bg-white text-black font-bold rounded-2xl hover:bg-blue-500 hover:text-white transition-all transform active:scale-95">
             Consultoría Gratuita

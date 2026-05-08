@@ -18,14 +18,14 @@ export const Hero = () => {
         <div className="text-left space-y-8">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 backdrop-blur-xl">
             <Sparkles size={14} className="text-blue-400" />
-            <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-blue-200/70">Software de élite para empresas audaces</span>
+            <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-blue-200/70">Desarrollo de Software y TI de élite</span>
           </div>
 
           <div className="relative">
              <h1 className="text-6xl md:text-7xl font-extrabold tracking-tight leading-[1.05]">
-              Ingeniería que <br />
+              Ingeniería de Software <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-blue-200 to-indigo-400">
-                eleva tu visión
+                que eleva tu visión
               </span>
             </h1>
             {/* Línea decorativa curva sutil */}
@@ -33,7 +33,7 @@ export const Hero = () => {
           </div>
 
           <p className="text-gray-400 text-lg max-w-lg leading-relaxed pt-4">
-            En <span className="text-white font-medium text-blue-100">CRAXMEDIA</span> no solo escribimos código; construimos los cimientos digitales que escalan tu negocio al siguiente nivel.
+            En <span className="text-white font-medium text-blue-100">CRAXMEDIA</span> desarrollamos aplicaciones móviles y soluciones de TI de alto impacto. Desde Cali, Valle del Cauca, construyendo el software que escalará tu negocio a nivel global.
           </p>
 
           <div className="flex flex-wrap gap-4 pt-4">
